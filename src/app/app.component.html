@@ -1,0 +1,37 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="bg">
+  <div class="search-container">
+    <div class="search-label">Book vacation rentals for less</div>
+    <div class="search-entry row">
+      <div class="col-md-3 column">
+        <div class="search-item">
+          <label class="placeholder">Where to?</label>
+          <div class="location-input">
+              <ng4geo-autocomplete [userSettings]="userSettings" (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 column">
+        <div class="search-item">
+          <label class="placeholder">Guests</label>
+          <div class="guest-input">
+            2 Guests
+            <span class="guest-step">-</span>
+            <span class="guest-step">+</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 column">
+        <div class="search-item-last">
+          <label class="placeholder">Check In - Check Out</label>
+          <div class="date-input">
+            Jul 3 - Jul 21, 2018
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <button type="button" [disabled]="noRecomendations()" class="btn btn-secondary btn-block search-button" (click)="searchListings()">Search</button>
+      </div>
+    </div>
+  </div>
+</div>

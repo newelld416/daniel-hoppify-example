@@ -1,0 +1,170 @@
+//Default Screen Breakpoints
+$screen-xs:                  480px !default;
+$screen-sm:                  768px !default;
+$screen-md:                  992px !default;
+$screen-lg:                  1200px !default;
+
+//Minimum Screen Breakpoints
+$screen-xs-min:              $screen-xs !default;
+$screen-sm-min:              $screen-sm !default;
+$screen-md-min:              $screen-md !default;
+$screen-lg-min:              $screen-lg !default;
+
+//Maximum Screen Breakpoints
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+
+
+.bg {
+  background-image: url("/assets/hero.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+
+  .search-container {
+    position: absolute;
+    margin: auto;
+    right: 0;
+    left: 0;
+    width: 50%;
+    border-radius: 3px;
+
+    @media screen and (min-width: $screen-sm){
+      min-width: 900px;
+    }
+
+    @media screen and (max-width: $screen-xs-max){
+      min-width: 400px;
+    }
+
+    .search-label {
+      @media (min-width: $screen-xs-max){
+        margin-top: 260px;
+      }
+      margin: 40px 0 20px;
+      color: #fff;
+      font-size: 30px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .search-entry {
+      background: #F4FCFD;
+      border-radius: 4px;
+      opacity: 0.95;
+
+      .column {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+
+      %search-shared {
+        display: block;
+        height: 100px;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+        padding: 6px 20px;
+
+        .placeholder {
+          display: block !important;
+          height: auto;
+          width: auto;
+          line-height: normal;
+          position: absolute;
+          top: 12px;
+          color: #9B9B9B;
+          font-size: 12px;
+          font-weight: normal
+        }
+      }
+
+      .search-item {
+        @extend %search-shared;
+        @media screen and (min-width: $screen-sm){
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            height: 60px;
+            width: 1px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            right: 0;
+            background: #a1a1a1;
+          }
+        }
+
+        .location-input {
+          margin-top: 24px;
+        }
+
+        .guest-input {
+          margin-top: 24px;
+          display: inline-block;
+          position: relative;
+          min-width: 60px;
+          line-height: normal;
+          padding: 5px;
+          font-size: 24px;
+
+          .guest-step {
+            display: inline-block;
+            height: 30px;
+            width: 30px;
+            background: none;
+            text-align: center;
+            line-height: 26px;
+            font-size: 22px;
+            font-weight: 300;
+            cursor: pointer;
+            vertical-align: middle;
+            border-radius: 3px;
+            border: 1px solid #57CED1;
+            color: #57CED1;
+            margin-left: 4px;
+            user-select: none;
+          }
+        }
+      }
+
+      .search-item-last {
+        @extend %search-shared;
+
+        .date-input  {
+          margin-top: 24px;
+          display: inline-block;
+          position: relative;
+          min-width: 60px;
+          line-height: normal;
+          padding: 5px;
+          font-size: 24px;
+        }
+      }
+
+      .search-button {
+        height: 48px;
+        background-color: #FF8D00;
+        border-color: #FF8D00;
+        width: 100%;
+        border-radius: 3px;
+        margin-bottom: 15px;
+        cursor: pointer;
+
+        @media screen and (min-width: $screen-sm){
+          width: calc(100% + 16px);
+          margin-bottom: 0px;
+          height: 100px;
+          border-radius: 0px;
+          border-top-right-radius: 3px;
+          border-bottom-right-radius: 3px;
+        }
+
+      }
+    }
+  }
+}
+
